@@ -1,0 +1,13 @@
+diff --git a/node_modules/dom-types/index.d.ts b/node_modules/dom-types/index.d.ts
+index 2aed35f..faf4489 100644
+--- a/node_modules/dom-types/index.d.ts
++++ b/node_modules/dom-types/index.d.ts
+@@ -7016,7 +7016,7 @@ interface HTMLElementEventMap extends ElementEventMap, GlobalEventHandlersEventM
+ }
+ 
+ /** Any HTML element. Some elements directly implement this interface, while others implement it via an interface that inherits it. */
+-interface HTMLElement extends Element, ElementCSSInlineStyle, ElementContentEditable, GlobalEventHandlers, HTMLOrSVGElement {
++export interface HTMLElement extends Element, ElementCSSInlineStyle, ElementContentEditable, GlobalEventHandlers, HTMLOrSVGElement {
+     accessKey: string;
+     readonly accessKeyLabel: string;
+     autocapitalize: string;
