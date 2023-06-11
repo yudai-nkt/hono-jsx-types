@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "description": "Enhanced type definitions for Hono's JSX intrinsic elements",
   "types": "index.d.ts",
-  "files": ["index.d.ts"],
+  "files": ["index.d.ts", "patches/*"],
   "scripts": {
-    "postinstall": "patch-package"
+    "postinstall": "patch-package --patch-dir=node_modules/hono-jsx-types/patches"
   },
   "keywords": ["hono", "jsx"],
   "author": "Yudai Nakata",
