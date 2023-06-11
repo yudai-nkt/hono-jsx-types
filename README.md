@@ -38,7 +38,7 @@ Then, add it to the `compilerOptions.types` array:
 ## FAQ
 ### Why not contribute to Hono's core?
 
-This package relies on the type definitions for DOM API from the DefinitelyTyped's [`@types/web`](https://www.npmjs.com/package/@types/we) package, which is also included in the TypeScript standard library.
+This package relies on the type definitions for DOM API from the DefinitelyTyped's [`@types/web`](https://www.npmjs.com/package/@types/web) package, which is also included in the TypeScript standard library.
 I believe Hono, as a edge/server side multi-runtime library, should depend only on TC39 and WinterCG standardization, not on WHATWG's DOM Living Standard even if the dependency is only type-level.
 
 ### Why not use the built-in `dom` library?
