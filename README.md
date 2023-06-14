@@ -42,7 +42,7 @@ Then, add it to the `compilerOptions.types` array:
 ## FAQ
 ### Why not contribute to Hono's core?
 
-This package relies on the type definitions for DOM API from the DefinitelyTyped's [`@types/web`](https://www.npmjs.com/package/@types/web) package, which is also included in the TypeScript standard library.
+This package relies on the type definitions for DOM API<sup>[1]</sup> from the DefinitelyTyped's [`@types/web`](https://www.npmjs.com/package/@types/web) package, which is also included in the TypeScript standard library.
 I believe Hono, as a edge/server side multi-runtime library, should depend only on TC39 and WinterCG standardization, not on WHATWG's DOM Living Standard even if the dependency is only type-level.
 
 ### Why not use the built-in `dom` library?
@@ -56,6 +56,8 @@ That's why I installed `@types/web` under a custom alias, patch the package to m
 This package is more of a POC right now.
 In addition to the package status, installing from GitHub should just work out-of-the-box as it only provides a type declaration file.
 I'll be dogfooding the package with [my project](https://github.com/yudai-nkt/awesome-hono) before publishing, so stay tuned.
+
+<small>[1] DOM properties are of course different from HTML attributes but their type definitions are quite helpful.</small>
 
 ## License
 
