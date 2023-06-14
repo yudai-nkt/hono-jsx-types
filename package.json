@@ -3,18 +3,24 @@
   "version": "0.0.0",
   "description": "Enhanced type definitions for Hono's JSX intrinsic elements",
   "types": "index.d.ts",
-  "files": ["index.d.ts", "patches/*"],
+  "files": [
+    "index.d.ts",
+    "patches/*"
+  ],
   "scripts": {
     "postinstall": "patch-package --patch-dir=node_modules/hono-jsx-types/patches"
   },
-  "keywords": ["hono", "jsx"],
+  "keywords": [
+    "hono",
+    "jsx"
+  ],
   "author": "Yudai Nakata",
   "license": "MIT",
   "dependencies": {
-    "dom-types": "npm:@types/web@^0.0.99"
+    "dom-types": "npm:@types/web@^0.0.99",
+    "patch-package": "^7.0.0"
   },
   "devDependencies": {
-    "patch-package": "^7.0.0",
     "typescript": "^5.0.2"
   },
   "peerDependencies": {

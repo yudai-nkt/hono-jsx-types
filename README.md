@@ -17,11 +17,15 @@ This package aims to fill the gap. Providing proper type definitions can help us
 
 ## Usage
 
-Install the package from GitHub:
+Install the package from GitHub and run a postinstall script.
+For unknown reasons, this package's postinstall script runs somewhere else than the current directory, so please run it manually.
+
 
 ```console
 npm install --save-dev yudai-nkt/hono-jsx-types
+npx patch-package --patch-dir=node_modules/hono-jsx-types/patches
 ```
+
 
 Then, add it to the `compilerOptions.types` array:
 
