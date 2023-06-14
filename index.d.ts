@@ -1,5 +1,4 @@
 import type {
-  Element,
   HTMLAnchorElement,
   HTMLAreaElement,
   HTMLAudioElement,
