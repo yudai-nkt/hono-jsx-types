@@ -1,4 +1,5 @@
 import type {
+  Element,
   HTMLAnchorElement,
   HTMLAreaElement,
   HTMLAudioElement,
@@ -124,6 +125,15 @@ import type {
 } from "dom-types";
 
 type BooleanLike = boolean | `${boolean}`;
+
+// (...arg: unknown[]) => unknown does not work with functions with overloads.
+// I'm not sure if using `Function` here is safe though.
+type MethodKeysImpl<T, K extends keyof T> = K extends K
+  ? T[K] extends Function
+    ? K
+    : never
+  : never;
+type MethodKeys<T> = MethodKeysImpl<T, keyof T>;
 
 declare global {
   namespace JSX {
@@ -359,7 +369,10 @@ declare global {
     }
 
     type HTMLAttributes<E> = AriaAttributes &
-      Partial<E | JSX.ElementChildrenAttribute>;
+      Partial<
+        | Omit<E, MethodKeys<E> | `aria${Capitalize<string>}`>
+        | JSX.ElementChildrenAttribute
+      >;
     interface IntrinsicElements {
       a: HTMLAttributes<HTMLAnchorElement>;
       abbr: HTMLAttributes<HTMLElement>;
