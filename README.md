@@ -47,7 +47,8 @@ I believe Hono, as a edge/server side multi-runtime library, should depend only 
 
 ### Why not use the built-in `dom` library?
 
-If this package adds it to the `compilerOptions.lib` array, types in `lib.dom.d.ts` would leak into your application and the same can be said for the declaration files under `@types` scope.
+If this package enables it by prepending the `reference lib` directive, availability of types in `lib.dom.d.ts` is not encapsulated within the package and those types would leak into your application.
+The same can be said for the declaration files under `@types` scope as well.
 This is generally undesirable because most Hono applications do not target browsers.
 That's why I installed `@types/web` under a custom alias, patch the package to make it into a module, and explicitly import types from it.
 
